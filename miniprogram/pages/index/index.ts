@@ -45,6 +45,7 @@ Page({
       })
     }
   },
+  
 
   getUserInfo(e: any) {
     console.log(e)
