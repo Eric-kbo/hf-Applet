@@ -12,7 +12,15 @@
 		"beforePreview": "npm run tsc",
 		"beforeUpload": "npm run tsc"
 	},
-	"setting": {},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false,
+		"checkInvalidKey": true
+	},
 	"appid": "wx9e0cb190a0275510",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
