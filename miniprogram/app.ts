@@ -3,7 +3,9 @@ export interface IMyApp {
   userInfoReadyCallback?(res: wx.UserInfo): void
   globalData: {
     userInfo?: wx.UserInfo
-  }
+  };
+  isPhone(phoneStr: string): boolean;
+  isEmail(emailStr: string): boolean;
 }
 
 App<IMyApp>({
@@ -41,5 +43,22 @@ App<IMyApp>({
     })
   },
   globalData: {
-  }
+
+  },
+  // 验证手机号
+  isPhone(phoneStr: string): boolean {
+    var phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/;
+    if (!phoneReg.test(phoneStr)) {
+      return false;
+    }
+    return true;
+  },
+  // 验证邮箱
+  isEmail(emailStr: string): boolean {
+    var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则
+    if (!reg.test(emailStr)) {
+      return false;
+    }
+    return true;
+  },
 })
